@@ -17,6 +17,10 @@
             phoneHtml,
             msg = $('#phone-alert').html();
 
+        if ($('#phone-alert').css('visibility') === 'visible') {
+            return;
+        }
+
         if (/AL|GA|FL|MS/.test(state)) {
             if (state === 'GA') {
                 phone = '706-845-0070';
