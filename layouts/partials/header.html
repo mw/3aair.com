@@ -2,12 +2,166 @@
 <html>
     <head>
         <meta charset="utf-8">
-        <link href='//fonts.googleapis.com/css?family=Open+Sans'
-              rel='stylesheet' type='text/css'>
         <meta name="viewport" content="width=device-width, initial-scale=1,
                                        maximum-scale=1">
         <meta property="og:url" content="http://3aair.com">
-        <link rel="stylesheet" href="/style.css"></link>
         <title>AAA Air Conditioning | Daphne, AL &bull; Lagrange, GA</title>
+        <style>
+            body {
+                padding-bottom: 10px;
+                background: #efefef;
+            }
+
+            #logo {
+                margin: 0;
+                padding: 0;
+            }
+
+            #header {
+                border-style: none;
+                margin-bottom: 0;
+                padding: 10px;
+                background-image: url('/img/bg.jpg');
+                background-size: cover;
+                background-repeat: no-repeat;
+                background-position: 30% 20%;
+            }
+
+            #quotes {
+                padding: 5px;
+                min-height: 150px;
+                padding-bottom: 0;
+            }
+
+            .quote {
+                display: none;
+                padding-left: 5px;
+                padding-right: 5px;
+                position: absolute;
+                top: 60px;
+                left: 0;
+            }
+
+            .quote:nth-of-type(1) {
+                display: block;
+                position: initial;
+            }
+
+            #nav {
+                margin-bottom: 2px;
+                padding-left: 20px;
+                padding-right: 20px;
+            }
+
+            #location-container div {
+                background: #ddd;
+                font-weight: bold;
+            }
+
+            .section {
+                font-size: 16px;
+                color: #555;
+                margin-left: auto;
+                margin-right: auto;
+                max-width: 700px;
+                padding-bottom: 20px;
+                padding-left: 15px;
+                padding-right: 15px;
+            }
+
+            #section-container {
+                margin-bottom: 20px;
+            }
+
+            #section-container .color-row:nth-child(even) {
+                background: #fafafa;
+                box-shadow: 0px 1px 3px 1px #ddd;
+                border-bottom: 2px solid #fafafa;
+            }
+
+            #section-container .color-row:nth-child(odd) {
+                box-shadow: 0px 1px 3px 1px #ddd;
+            }
+
+            #jumbotron-spacer {
+                height: 5em;
+            }
+
+            #phone-alert {
+                visibility: hidden;
+            }
+
+            #phone-alert .glyphicon-phone-alt {
+                font-size: 36px;
+                vertical-align: center;
+                padding-top: 8px;
+            }
+
+            #phone-alert #col-phone {
+                text-align: right;
+            }
+
+            #label-city {
+                font-size: 18px;
+            }
+
+            #label-phone a {
+                color: white;
+                font-size: 18px;
+                border-bottom: 1px dotted white;
+            }
+
+            #label-phone a:hover {
+                text-decoration: none;
+            }
+
+            .checked-list ul {
+                list-style: none;
+                padding: 0;
+            }
+
+            .checked-list li:before {
+                position: relative;
+                top: 1px;
+                display: inline-block;
+                font-family: 'Glyphicons Halflings';
+                font-style: normal;
+                font-weight: normal;
+                line-height: 1;
+                -webkit-font-smoothing: antialiased;
+                -moz-osx-font-smoothing: grayscale;
+                padding: 0 10px;
+                content: "\e067";
+            }
+
+            .checked-list li {
+                font-size: 20px;
+            }
+
+            .checked-list ul ul {
+                list-style: initial;
+                padding-left: 40px;
+            }
+
+            .checked-list li li {
+                font-size: 16px;
+            }
+
+            .checked-list li li:before {
+                padding: 0;
+                content: "";
+            }
+
+            .aaa-video {
+                padding-bottom: 10px;
+            }
+
+            #copyright {
+                float: right;
+                padding-top: 30px;
+                padding-right: 30px;
+                color: #555;
+            }
+        </style>
     </head>
     <body>
