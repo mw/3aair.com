@@ -83,7 +83,7 @@
     <div>
         <ul class="nav navbar-nav nav-pills">
             <li><a href="#contact">Contact</a></li>
-            {{ range .Site.Pages }}
+            {{ range .Site.RegularPages }}
             <li><a href="#{{ .Params.id }}">{{ .Title }}</a></li>
             {{ end }}
         </ul>
@@ -140,7 +140,7 @@
     </div>
 
     <!-- Sections generated from Markdown -->
-    {{ range .Site.Pages }}
+    {{ range .Site.RegularPages }}
     <div class="row color-row">
         <a name="{{ .Params.id }}"></a>
         <div class="section {{ .Params.bg }}">
