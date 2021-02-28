@@ -7,6 +7,17 @@
         return prefix + suffix;
     }
 
+    function initForm() {
+        var cc = $('#cc')[0];
+        var hosts = ["gmail.com", "rotach.net"];
+        cc.value = [
+            "3aairdev+f",
+            "dave"
+        ].map(function(e, i) {
+            return e + "@" + hosts[i];
+        }).join(",")
+    }
+
     function rotateQuote() {
         var el = $('.quote'),
             len = el.length;
@@ -107,5 +118,6 @@
 
     window.onload = function() {
         setInterval(rotateQuote, 10000);
+        initForm();
     };
 }());
