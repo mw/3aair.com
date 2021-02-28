@@ -1,50 +1,11 @@
 (function() {
-    var quoteIndex = 0,
-        location = null;
+    var quoteIndex = 0;
 
-    function getEmail(location) {
+    function getEmail() {
         var prefix = 'carlwin+',
             suffix = '3aair@gmail.com';
-        if (location === 'GA') {
-            prefix = 'dalenorris';
-        }
         return prefix + suffix;
     }
-
-    function updateLocation(result) {
-        var phone = '251-626-5588',
-            state = result.region_code,
-            phoneHtml,
-            msg = $('#phone-alert').html();
-
-        if ($('#phone-alert').css('visibility') === 'visible') {
-            return;
-        }
-
-        if (/AL|GA|FL|MS/.test(state)) {
-            if (state === 'GA') {
-                phone = '706-845-0070';
-                location = 'GA';
-            }
-            else {
-                location = 'AL';
-            }
-            phoneHtml = '<a href="tel:+1' + phone.replace(/\-/g, '') + '">' +
-                phone + '</a>';
-            msg = msg.replace(/\\1/g, result.city + ', ' + state)
-                .replace(/\\2/g, phoneHtml);
-
-            $('#phone-alert').html(msg);
-            $('#phone-alert').css({
-                'visibility': 'visible',
-                'opacity': 0
-            });
-            $('#phone-alert').animate({'opacity': 1}, 500);
-        }
-        else {
-            geoipFallback();
-        }
-    };
 
     function rotateQuote() {
         var el = $('.quote'),
@@ -62,22 +23,6 @@
             lessLink: '<a href="#">Read Less</a>',
             collapsedHeight: 80
         });
-    }
-
-    function geoipFallback() {
-        var fallbackHtml;
-        if ($('#phone-alert').css('visibility') === 'hidden') {
-            fallbackHtml = $('#phone-alert-fail').html();
-            $('#phone-alert').html(fallbackHtml);
-            $('#phone-alert').css({
-                'visibility': 'visible',
-                'opacity': 0
-            });
-            $('#phone-alert').animate({'opacity': 1}, 500);
-
-            // Add the location dropdown to the contact form
-            $('#location-container').removeClass('hide');
-        }
     }
 
     function showContactAlert(context) {
@@ -131,7 +76,7 @@
     $('#contact-send').click(function() {
         var urlBase = '//formspree.io/',
             contactForm = $('#contact-form'),
-            email = getEmail(location || $('#location-dropdown').val());
+            email = getEmail();
 
         if (!validateContactForm(contactForm)) {
             return;
@@ -161,21 +106,6 @@
     });
 
     window.onload = function() {
-        $.ajax({
-            url: '//freegeoip.net/json/',
-            type: 'POST',
-            dataType: 'jsonp',
-            success: function(result) {
-                updateLocation(result);
-            },
-            error: function() {
-                geoipFallback();
-            }
-        });
         setInterval(rotateQuote, 10000);
     };
-
-    // In case of adblock (error callback never called),
-    // we need to manually invoke the fallback method.
-    setTimeout(geoipFallback, 3000);
 }());

@@ -1,5 +1,5 @@
-baseurl = "http://3aair.com/"
+baseurl = "https://3aair.com/"
 languageCode = "en-us"
 title = "AAA Air Conditioning | Daphne, AL 36526"
-copyright = "© 2018 AAA Air Conditioning, LLC"
+copyright = "© 2021 AAA Air Conditioning, LLC"
 disableKinds = ["section", "taxonomy", "taxonomyTerm"]
